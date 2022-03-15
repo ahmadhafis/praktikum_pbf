@@ -1,0 +1,29 @@
+{
+  "mahasiswa": [
+    {
+      "nim": 180823453,
+      "nama": "Mahasiswa 1",
+      "alamat": "Jl. Soekarno Hatta No. 9 Malang",
+      "hp": "081802023249",
+      "angkatan": 2018,
+      "status": "aktif"
+    },
+    {
+      "nim": 140823453,
+      "nama": "Mahasiswa X",
+      "alamat": "Jl. Menur No. 9 Surabaya",
+      "hp": "081802023523",
+      "angkatan": 2014,
+      "status": "lulus"
+    },
+    {
+      "id": 1647342194657,
+      "nim": "1935698234",
+      "nama": "Indra KenZ",
+      "alamat": "Jl.Kapibara No.7",
+      "hp": "08991887263",
+      "angkatan": "2021",
+      "status": "aktif"
+    }
+  ]
+}
