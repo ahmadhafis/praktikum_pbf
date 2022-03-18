@@ -7,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 
 // import BlogPost from "./container/BlogPost/BlogPost";
 
-import Mahasiswa from "./container/Mahasiswa/ListMahasiswa"
 import ListMahasiswa from './container/Mahasiswa/ListMahasiswa';
 
 ReactDOM.render(<ListMahasiswa />, document.getElementById('content'));

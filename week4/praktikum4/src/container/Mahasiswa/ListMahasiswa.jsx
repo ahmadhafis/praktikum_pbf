@@ -57,17 +57,6 @@ class ListMahasiswa extends Component {
     }).then((response) => {
       this.ambilDataDariServerAPI();
     });
-    this.setState({
-      insertMahasiswa: {
-        id: 1,
-        nim: "",
-        nama: "",
-        alamat: "",
-        hp: "",
-        angkatan: "",
-        status: "",
-      },
-    });
   };
 
   render() {
