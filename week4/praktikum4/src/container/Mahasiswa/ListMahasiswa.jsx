@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Mahasiswa from "../../component/Mahasiswa/Mahasiswa";
+import "./ListMahasiswa.css"
 
 class ListMahasiswa extends Component {
   state = {
@@ -45,8 +46,7 @@ class ListMahasiswa extends Component {
     );
   };
 
-  handleTombolSimpan = (e) => {
-    e.preventDefault();
+  handleTombolSimpan = () => {
     fetch("http://localhost:3002/mahasiswa", {
       method: "post",
       headers: {
@@ -60,117 +60,55 @@ class ListMahasiswa extends Component {
   };
 
   render() {
-    return (
-      <div className="container">
-        <div className="row my-4">
-          <div className="col-12 mb-5">
-            <div className="card">
-              <div className="card-header">Form Tambah Mahasiswa</div>
-              <div className="card-body">
-                <div>
-                  <div className="form-group mb-2">
-                    <label htmlFor="nim">NIM</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="nim"
-                      name="nim"
-                      value={this.state.insertMahasiswa.nim}
-                      onChange={this.handleTambahMahasiswa}
-                    />
-                  </div>
-                  <div className="form-group mb-2">
-                    <label htmlFor="nama">Nama</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="nama"
-                      name="nama"
-                      value={this.state.insertMahasiswa.nama}
-                      onChange={this.handleTambahMahasiswa}
-                    />
-                  </div>
-                  <div className="form-group mb-2">
-                    <label htmlFor="hp">Nomor HP</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="hp"
-                      name="hp"
-                      value={this.state.insertMahasiswa.hp}
-                      onChange={this.handleTambahMahasiswa}
-                    />
-                  </div>
-                  <div className="mb-2">
-                    <label htmlFor="angkatan">Tahun Angkatan</label>
-                    <select
-                      className="form-control"
-                      id="angkatan"
-                      name="angkatan"
-                      defaultValue={this.state.insertMahasiswa.angkatan}
-                      onChange={this.handleTambahMahasiswa}
-                    >
-                      <option value="" disabled>
-                        Pilih Tahun Angkatan
-                      </option>
-                      <option value="2017">2017</option>
-                      <option value="2018">2018</option>
-                      <option value="2019">2019</option>
-                      <option value="2020">2020</option>
-                      <option value="2021">2021</option>
-                      <option value="2022">2022</option>
-                    </select>
-                  </div>
-                  <div className="mb-4">
-                    <label htmlFor="alamat">Alamat</label>
-                    <textarea
-                      className="form-control"
-                      name="alamat"
-                      id="alamat"
-                      rows="3"
-                      value={this.state.insertMahasiswa.alamat}
-                      onChange={this.handleTambahMahasiswa}
-                    ></textarea>
-                  </div>
-                  <div className="mb-2">
-                    <label htmlFor="status">Status</label>
-                    <select
-                      className="form-control"
-                      id="status"
-                      name="status"
-                      defaultValue={this.state.insertMahasiswa.status}
-                      onChange={this.handleTambahMahasiswa}
-                    >
-                      <option value="" disabled>
-                        Pilih Status
-                      </option>
-                      <option value="aktif">Aktif</option>
-                      <option value="lulus">Lulus</option>
-                      <option value="cuti">Cuti</option>
-                    </select>
-                  </div>
-                  <button type="submit" className="btn btn-primary" onClick={this.handleTombolSimpan}>Simpan</button>
-                </div>
-              </div>
+    return(
+    <div className="post-mahasiswa">
+    <div className='form pb-2 border-bottom'>
+        <div className='form-group row'>
+            <label htmlFor="nim" className='col-sm-2 col-form-label'>Nim</label>
+            <div className='col-sm-10'>
+                <input type="text" className="form-control" id="nim" name="nim" onChange={this.handleTambahMahasiswa} />
             </div>
-          </div>
-          <div className="col-12">
-            <h1>List Mahasiswa</h1>
-            <ul className="list-group">
-              {this.state.ListMahasiswa.map((mahasiswa) => {
-                return (
-                  <Mahasiswa
-                    key={mahasiswa.nim}
-                    data={mahasiswa}
-                    hapus={this.handleHapusMahasiswa}
-                  />
-                );
-              })}
-            </ul>
-          </div>
         </div>
-      </div>
-    );
+        <div className='form-group row'>
+            <label htmlFor="nama" className='col-sm-2 col-form-label'>Nama</label>
+            <div className='col-sm-10'>
+                <input type="text" className="form-control" id="nama" name="nama" onChange={this.handleTambahMahasiswa} />
+            </div>
+        </div>
+        <div className='form-group row'>
+            <label htmlFor="alamat" className='col-sm-2 col-form-label'>Alamat</label>
+            <div className='col-sm-10'>
+                <input type="text" className="form-control" id="alamat" name="alamat" onChange={this.handleTambahMahasiswa} />
+            </div>
+        </div>
+        <div className='form-group row'>
+            <label htmlFor="hp" className='col-sm-2 col-form-label'>Hp</label>
+            <div className='col-sm-10'>
+                <input type="text" className="form-control" id="hp" name="hp" onChange={this.handleTambahMahasiswa} />
+            </div>
+        </div>
+        <div className='form-group row'>
+            <label htmlFor="angkatan" className='col-sm-2 col-form-label'>Angkatan</label>
+            <div className='col-sm-10'>
+                <input type="text" className="form-control" id="angkatan" name="angkatan" onChange={this.handleTambahMahasiswa} />
+            </div>
+        </div>
+        <div className='form-group row'>
+            <label htmlFor="status" className='col-sm-2 col-form-label'>Status</label>
+            <div className='col-sm-10'>
+                <input type="text" className='form-control' id='status' name='status' onChange={this.handleTambahMahasiswa}></input>
+            </div>
+        </div>
+        <button type='submit' className='btn btn-primary' onClick={this.handleTombolSimpan}>Simpan</button>
+    </div>
+    <h2>List Mahasiswa</h2>
+    {
+        this.state.ListMahasiswa.map(mahasiswa => {
+            return <Mahasiswa key={mahasiswa.id} nim={mahasiswa.nim} nama={mahasiswa.nama} alamat={mahasiswa.alamat} angkatan={mahasiswa.angkatan} hp={mahasiswa.hp} status={mahasiswa.status} id={mahasiswa.id} hapus={this.handleHapusMahasiswa} />
+        })
+    }
+</div>
+    )
   }
 }
 

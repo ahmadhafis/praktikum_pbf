@@ -1,5 +1,4 @@
 import React from "react";
-import List from "./List";
 
 const Mahasiswa = (props) => {
     return(
@@ -7,16 +6,14 @@ const Mahasiswa = (props) => {
             <div className="foto-mhs">
                 <img src="http://placeimg.com/90/90/people" alt="Foto Mhs" />
             </div>
-            <div>
-            <li className="list-group-item">
-                <List title="NIM" value={props.data.nim} />
-                <List title="Nama" value={props.data.nama} />
-                <List title="Alamat" value={props.data.alamat} />
-                <List title="No. HP" value={props.data.hp} />
-                <List title="Angkatan" value={props.data.angkatan} />
-                <List title="Status" value={props.data.status} />
-                <button className="btn btn-sm btn-warning" onClick={() => props.hapus(props.data.id)}>Hapus</button>
-            </li>
+            <div className="data-mhs">
+                <div className="nim-mhs">NIM : {props.nim}</div>
+                <p className="isi-mhs">Nama  : {props.nama}</p>
+                <p className="isi-mhs">Alamat : {props.alamat}</p>
+                <p className="isi-mhs">No.HP : {props.hp}</p>
+                <p className="isi-mhs">Angkatan : {props.angkatan}</p>
+                <p className="isi-mhs">Status : {props.status}</p>
+                <button className="btn btn-sm btn-warning" onClick={() => props.hapus(props.id)}>Hapus</button>
         </div>
         </div>
     )
