@@ -104,7 +104,7 @@ class ListMahasiswa extends Component {
     <h2>List Mahasiswa</h2>
     {
         this.state.ListMahasiswa.map(mahasiswa => {
-            return <Mahasiswa key={mahasiswa.id} nim={mahasiswa.nim} nama={mahasiswa.nama} alamat={mahasiswa.alamat} angkatan={mahasiswa.angkatan} hp={mahasiswa.hp} status={mahasiswa.status} id={mahasiswa.id} hapus={this.handleHapusMahasiswa} />
+            return <Mahasiswa key={mahasiswa.nim} nim={mahasiswa.nim} nama={mahasiswa.nama} alamat={mahasiswa.alamat} angkatan={mahasiswa.angkatan} hp={mahasiswa.hp} status={mahasiswa.status} id={mahasiswa.id} hapus={this.handleHapusMahasiswa} />
         })
     }
 </div>
