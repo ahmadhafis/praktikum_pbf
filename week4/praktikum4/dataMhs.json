@@ -24,15 +24,6 @@
       "hp": "123456789",
       "angkatan": "2019",
       "status": "lulus"
-    },
-    {
-      "id": 1647741085590,
-      "nim": "1941720107",
-      "nama": "Ahmad Hafis",
-      "alamat": "Malang",
-      "hp": "0123456789",
-      "angkatan": "2019",
-      "status": "Aktif"
     }
   ]
 }
