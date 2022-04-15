@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./BlogPost.css";
 import Post from "../../component/BlogPost/Post"
+import API from "../../services";
 
 class BlogPost extends Component {
     state = {
@@ -14,13 +15,10 @@ class BlogPost extends Component {
     }
 
     ambilDataDariServerAPI(){
-        fetch('http://localhost:3001/posts')
-        .then(response => response.json())
-        .then(jsonHasilAmbilAPI => {
-            this.setState(
-                {
-                    listArtikel: jsonHasilAmbilAPI
-                })
+        API.getNewsBlog().then(result => {
+          this.setState({
+            listArtikel: result
+          })
         })
     }
 
@@ -30,9 +28,9 @@ class BlogPost extends Component {
 
 
     handleHapusArtikel = (data) => {
-      fetch(`http://localhost:3001/posts/${data}`, { method: "DELETE" }).then(
-        (res) => this.ambilDataDariServerAPI()
-      );
+      API.deleteNewsBlog(data).then((response)=>{
+        this.ambilDataDariServerAPI();
+      })
     };
 
 
@@ -48,17 +46,10 @@ class BlogPost extends Component {
 
 
     handleTombolSimpan = () => {
-      fetch('http://localhost:3001/posts', {
-        method: 'post',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(this.state.insertArtikel)
-      })
-      .then((response) => {
-        this.ambilDataDariServerAPI()
-      })
+      API.postNewsBlog(this.state.insertArtikel)
+        .then((response) => {
+          this.ambilDataDariServerAPI();
+        });
     }
 
   render() {
