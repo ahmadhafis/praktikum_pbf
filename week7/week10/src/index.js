@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import {Switch, BrowseRouter as Router, Route} from 'react-router-dom';
+import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 import routes from './routes';
 import Header from './Header';
-import reportWebVitals from './reportWebVitals';
+import "./styles.css";
+import * as firebase from "firebase";
+import firebaseConfig from "./firebase.config";
+
 
 export const AuthContext = React.createContext(null);
 
@@ -35,8 +38,3 @@ function App () {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
