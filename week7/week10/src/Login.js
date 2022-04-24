@@ -1,6 +1,6 @@
 import React, { useState,useContext, useEffect } from "react";
 import { AuthContext } from "./index";
-import * as firebase from "firebase";
+import firebase from "firebase";
 import "./styles.css";
 
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
     const handleForm = e => {
         e.preventDefault();
         firebase.auth()
-        .signInUserWithEmailAndPassword(email, password)
+        .signInWithEmailAndPassword(email, password)
         .then(res => {
             if (res.user) Auth.setLoggedIn(true);
         })
